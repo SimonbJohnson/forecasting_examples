@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Migrant Arrivals Forecasting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Load CSS Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/introjs.css" />
+        <link rel="stylesheet" type="text/css" href="css/forecasting.css" />
+
+        <!-- Load Javascript Libraries -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/d3.min.js"></script>
+        <script type="text/javascript" src="js/d3.tip.min.js"></script>
+        <script type="text/javascript" src="js/intro.js"></script>
+
+        <!-- Google Analytics Script -->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46399763-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>             
+    </head>
+    <body class="container forecast">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="title">Forecasting Migrant Arrivals through the Balkans</h1>
+				<button id="intro" class="btn btn-primary btn-sm">Need an Explanation?</button>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+        <div class="row bottomborder">
+            <div class="col-md-6">
+                <p>This page displays forecasts for arrival numbers into countries along the Western Balkans route. It offers a 1, 2 and 3 day forecast for arrivals based upon past data.</p>
+                <div id="options">
+                    <select id="forecastselection" class="options-style">
+                        <option selected="selected" value="forecastbutton">Current Forecast</option>
+                        <option value="previousbutton1">Previous Performance for 1 Day Forecasts</option>
+                        <option value="previousbutton2">Previous Performance for 2 Day Forecasts</option>
+                        <option value="previousbutton3">Previous Performance for 3 Day Forecasts</option>
+
+                    </select>
+                    
+
+                </div>                
+            </div>
+            <div class="col-md-6">
+
+				
+            </div>
+        </div>
+		<div class="row">
+            <div id="graphs" class="col-md-6">
+                <div id="results">
+                    <p class="loading">Loading...</p>
+                </div>
+                <div id="previous1"></div>
+                <div id="previous2"></div>
+                <div id="previous3"></div>
+				<footer>
+					<div class="container">
+						<p class="highlight">NOTE: <br/>The results of this model are not guaranteed. Migrant movement is based upon many variables and this model only takes into account past arrivals numbers. For best results, use these predictions as a guide alongside weather conditions, border policies, public opinion, political events, migrant demographics, etc.</p>
+					</div>
+				</footer>			
+            </div>   
+			<div class="col-md-6">	
+				<div id="high_imp_news">
+
+				</div>
+			</div>
+        </div>
+        <!-- Run Custom Javascript for the Website -->
+        <script src="js/forecasting.js"></script>
+    </body>
+</html>
